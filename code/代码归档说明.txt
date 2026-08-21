@@ -1,0 +1,21 @@
+代码归档说明（v3）
+==================
+
+本文件夹单独存放网站的源代码与生成脚本，方便管理与复用。
+
+【内容】
+    js/                     全部 JS（归档副本）
+        model-config.js     ★ 模型系数 + 风险分档 + 量表阈值
+        ptsd-calculator.js  计算与结果渲染（三档风险）
+        questionnaire.js    7 部分问卷（渲染/评分/自动填计算器）
+        ppq.js              PTSD 问卷（14 题）
+    css/style.css           柔粉系全局样式（归档副本）
+    主页index.html          主页源码（归档副本）
+    ptsd-questionnaire.html PTSD 问卷页源码（归档副本）
+    methods/                6 个调节方法页（归档副本）
+    占位页模板.html         （v1 遗留模板，已不使用）
+
+【关系说明】
+    网站本体运行的是根目录下的 index.html、css/、js/、methods/ 等。
+    code/ 内 js、css、methods 与根目录相同，仅作归档；
+    修改网站请改根目录文件，再同步到本归档。

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>围产期心理健康评估中心 · 广东医科大学附属佛山市妇幼保健院</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 顶部医院品牌条 -->
+  <header class="brand-bar">
+    <div class="container brand-inner">
+      <div class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"></path>
+        </svg>
+      </div>
+      <div>
+        <h1>广东医科大学附属佛山市妇幼保健院</h1>
+        <p>Affiliated Foshan Maternity &amp; Child Healthcare Hospital, Guangdong Medical University</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- 页首说明 -->
+    <section class="hero">
+      <h2>围产期心理健康评估中心</h2>
+      <p>请先完成上方问卷，系统将自动生成产妇信息并评估产后 42 天 PTSD 发病风险</p>
+    </section>
+
+    <!-- 多步问卷 -->
+    <section class="card q-card">
+      <div class="card-head">
+        <h3>评估问卷</h3>
+        <p>请按顺序完成以下 7 个部分，填写完成后点击「生成评估结果」，结果将自动填入下方计算器</p>
+      </div>
+
+      <div class="q-indicator" id="q-indicator"><!-- 步骤指示点由 js/questionnaire.js 生成 --></div>
+      <div class="q-steps" id="questionnaire"><!-- 问卷内容由 js/questionnaire.js 生成 --></div>
+
+      <div class="q-nav">
+        <button type="button" class="btn-plain" id="q-btn-prev">上一步</button>
+        <button type="button" class="btn-primary btn-q" id="q-btn-next">下一步</button>
+        <button type="button" class="btn-primary btn-q" id="q-btn-done" style="display:none">生成评估结果</button>
+      </div>
+
+      <div class="q-done" id="q-done" style="display:none">
+        <div class="q-done-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <p class="q-done-title">问卷填写完成，已自动填入下方计算器</p>
+        <p class="q-done-list" id="q-done-list"></p>
+        <p class="q-done-hint">您可在下方计算器中手动微调任一项目，右侧结果将实时更新。</p>
+      </div>
+    </section>
+
+    <!-- 左右分栏主区域 -->
+    <div class="main-grid">
+
+      <!-- 左侧：产妇信息评估（自动填充） -->
+      <div class="left-col">
+        <section class="card calc-card" id="calc-section">
+          <div class="card-head">
+            <h3>产妇信息评估</h3>
+            <p>已由上方问卷自动填充，可手动微调。修改后右侧结果实时更新。</p>
+          </div>
+          <form id="calc-form" novalidate>
+            <div id="calc-list"><!-- 计算器题目由 js/ptsd-calculator.js 生成 --></div>
+            <button type="submit" class="btn-primary">重新计算</button>
+          </form>
+        </section>
+      </div>
+
+      <!-- 右侧：评估结果 -->
+      <div class="right-col">
+        <section class="card result-card">
+          <div class="card-head">
+            <h3>评估结果</h3>
+          </div>
+
+          <div class="result-empty" id="result-empty">
+            请先完成上方问卷或填写左侧产妇信息，<br>点击「生成评估结果」后，此处将显示 PTSD 发病风险评估结果。
+          </div>
+
+          <div id="result-content" hidden>
+            <div class="result-badge low" id="result-badge">低风险人群</div>
+            <p class="result-title">产妇产后 42 天创伤后应激障碍（PTSD）发病风险</p>
+            <div class="result-prob">
+              <span class="prob-value low" id="result-prob">0.00</span>
+              <span class="prob-unit">%</span>
+            </div>
+            <div class="prob-bar"><div class="prob-fill low" id="result-bar"></div></div>
+            <p class="result-note low" id="result-note"></p>
+
+            <div class="method-head">相关调节方法</div>
+            <div class="method-grid" id="method-grid"><!-- 按风险等级展示对应的调节方法入口 --></div>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+    <!-- 围产期创伤后应激障碍问卷入口 -->
+    <section class="card scale-section">
+      <div class="card-head">
+        <h3>围产期创伤后应激障碍问卷</h3>
+        <p>评价产妇是否存在产后创伤后应激障碍（PTSD）相关症状，共 14 题</p>
+      </div>
+      <div class="entry-grid entry-single">
+        <a class="entry-card" href="ptsd-questionnaire.html">
+          <span class="ec-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          </span>
+          <span class="ec-title">围产期创伤后应激障碍问卷</span>
+          <span class="ec-desc">14 题 · 评估过去一个月是否出现与分娩相关的 PTSD 症状</span>
+          <span class="ec-arrow">进入 →</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="container">
+      <p>本工具仅用于风险评估参考，不构成临床诊断。如有心理困扰，请及时寻求专业帮助。</p>
+      <p>广东医科大学附属佛山市妇幼保健院 · 围产期心理健康评估中心</p>
+    </div>
+  </footer>
+
+  <script src="js/model-config.js"></script>
+  <script src="js/ptsd-calculator.js"></script>
+  <script src="js/questionnaire.js"></script>
+</body>
+</html>
