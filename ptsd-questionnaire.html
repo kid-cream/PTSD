@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>围产期创伤后应激障碍问卷 · 广东医科大学附属佛山市妇幼保健院</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 顶部医院品牌条 -->
+  <header class="brand-bar">
+    <div class="container brand-inner">
+      <div class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"></path>
+        </svg>
+      </div>
+      <div>
+        <h1>广东医科大学附属佛山市妇幼保健院</h1>
+        <p>Affiliated Foshan Maternity &amp; Child Healthcare Hospital, Guangdong Medical University</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="index.html">← 返回首页</a>
+
+    <!-- PTSD 问卷 -->
+    <section class="card page-card">
+      <div class="card-head">
+        <h3>围产期创伤后应激障碍问卷</h3>
+        <p>共 14 题 · 请根据产妇过去一个月的实际情况作答</p>
+      </div>
+
+      <div class="q-step-head" style="margin-bottom:6px;">
+        <p>指导语：以下问题询问与分娩及宝宝住院有关的感受，请根据实际情况在对应的选项上选择。</p>
+      </div>
+
+      <form id="ppq-form" novalidate>
+        <div id="ppq-list"><!-- 14 题由 js/ppq.js 生成 --></div>
+        <button type="submit" class="btn-primary" style="margin-top:20px;">提交评估</button>
+      </form>
+    </section>
+
+    <!-- 评估结果 -->
+    <section class="card result-card" id="ppq-result" style="display:none;">
+      <div class="card-head">
+        <h3>评估结果</h3>
+      </div>
+      <div class="result-badge low" id="ppq-badge">未见明显 PTSD 症状</div>
+      <p class="result-title">围产期创伤后应激障碍问卷（PPQ）总分（0-56 分）</p>
+      <div class="result-prob">
+        <span class="prob-value low" id="ppq-score">0</span>
+        <span class="prob-unit">分</span>
+      </div>
+      <p class="result-note low" id="ppq-note"></p>
+
+      <div class="method-head">相关调节方法</div>
+      <div class="method-grid">
+        <a class="method-card" href="methods/referral.html">
+          <span class="mc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg>
+          </span>
+          <span><span class="mc-title">心理科转诊与咨询指引</span><span class="mc-desc">专业心理咨询与评估预约</span></span>
+        </a>
+        <a class="method-card" href="methods/family-support.html">
+          <span class="mc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+          </span>
+          <span><span class="mc-title">家庭支持与照护指南</span><span class="mc-desc">家人的理解与陪伴</span></span>
+        </a>
+        <a class="method-card" href="methods/emergency-help.html">
+          <span class="mc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <span><span class="mc-title">紧急心理求助渠道</span><span class="mc-desc">紧急求助联系方式</span></span>
+        </a>
+        <a class="method-card" href="methods/relaxation-training.html">
+          <span class="mc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          </span>
+          <span><span class="mc-title">孕期放松训练方法</span><span class="mc-desc">呼吸、音乐等放松训练</span></span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="container">
+      <p>本工具仅用于风险评估参考，不构成临床诊断。如有心理困扰，请及时寻求专业帮助。</p>
+      <p>广东医科大学附属佛山市妇幼保健院 · 围产期心理健康评估中心</p>
+    </div>
+  </footer>
+
+  <script src="js/model-config.js"></script>
+  <script src="js/ppq.js"></script>
+</body>
+</html>
