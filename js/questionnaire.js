@@ -243,7 +243,7 @@
 
     return {
       pain: pain,
-      painSevere: pain > T.painSevere ? "是" : "否",
+      painSevere: pain >= T.painSevere ? "是" : "否",
       traumatic: traumatic,
       parity: radioVal("parity") || "经产妇",
       ssrsTotal: ssrsTotal,
@@ -397,7 +397,7 @@
 
   function nrsCategory(score) {
     if (score <= 3) return "轻度及以下";
-    if (score <= 7) return "中度";
+    if (score <= 6) return "中度";
     return "重度";
   }
 

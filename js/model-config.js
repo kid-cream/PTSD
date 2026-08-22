@@ -13,7 +13,7 @@
      高风险  p ≥ 0.70
 
    阈值配置：
-     painSevere   NRS 疼痛数字 > 7（即 8-10）→ 重度 → 产后疼痛(重度)=是
+     painSevere   NRS 疼痛数字 ≥ 7（即 7-10）→ 重度 → 产后疼痛(重度)=是
      ssrsHigh     SSRS 总分 > 44 → 社会支持=高水平；否则 中低水平
      psqiPoor     PSQI 总分 > 7（国内标准）→ 睡眠质量=不满意
      epdsRisk     EPDS 总分 ≥ 10 → 孕期沮丧=有
@@ -32,7 +32,7 @@ const PTSD_MODEL = {
 
   // 各量表判定阈值
   thresholds: {
-    painSevere: 7,    // NRS 数字 > 7 → 重度
+    painSevere: 7,    // NRS 数字 ≥ 7 → 重度
     ssrsHigh: 44,     // SSRS 总分 > 44 → 高水平
     psqiPoor: 7,      // PSQI 总分 > 7 → 睡眠不满意
     epdsRisk: 10,     // EPDS ≥ 10 → 沮丧有
